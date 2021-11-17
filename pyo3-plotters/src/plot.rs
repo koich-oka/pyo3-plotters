@@ -1,6 +1,6 @@
 use plotters::prelude::*;
 
-pub fn plot(out_file_name: String) -> Result<(), Box<dyn std::error::Error>> {
+pub fn plot(out_file_name: String, start: f32, end: f32) -> Result<(), Box<dyn std::error::Error>> {
     let root_area = BitMapBackend::new(&out_file_name, (1024, 768)).into_drawing_area();
 
     root_area.fill(&WHITE)?;
@@ -9,7 +9,7 @@ pub fn plot(out_file_name: String) -> Result<(), Box<dyn std::error::Error>> {
 
     let (upper, lower) = root_area.split_vertically(512);
 
-    let x_axis = (-3.4f32..3.4).step(0.1);
+    let x_axis = (start..end).step(0.1);
 
     let mut cc = ChartBuilder::on(&upper)
         .margin(5)

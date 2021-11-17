@@ -9,8 +9,8 @@ fn sum_as_string(a: usize, b: usize) -> PyResult<String> {
 }
 
 #[pyfunction]
-fn plot_with_plotters(out_file_name: String) -> PyResult<()> {
-    plot(out_file_name);
+fn plot_with_plotters(out_file_name: String, start: f32, end: f32) -> PyResult<()> {
+    plot(out_file_name, start, end);
     Ok(())
 }
 
