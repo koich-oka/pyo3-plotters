@@ -8,6 +8,9 @@ edition = "2021"
 name = "pyo3_plotters"
 crate-type = ["cdylib"]
 
+[dependencies]
+plotters = "0.3.1"
+
 [dependencies.pyo3]
 version = "0.15.0"
 features = ["extension-module"]
