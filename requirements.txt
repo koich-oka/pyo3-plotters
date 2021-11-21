@@ -1,3 +1,4 @@
 maturin
 line-profiler
 matplotlib
+plotly
